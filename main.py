@@ -23,10 +23,6 @@ def check_answer(guess, answer, turns):
     return turns -1
   elif guess == answer:
     print(f"You right! the answer is {answer}")
-#track lives
-
-
-#repeating guess
 
 def play():
   print("Welcome to the Number Guessing Game")
@@ -36,11 +32,14 @@ def play():
 
   turns = set_diff()
   guess = 0
+
+  #repeating guess
   while guess != answer:
     print(f"You have remaining {turns} chances to guess")
     #guess a number
     guess = int(input("Guess a number: "))
 
+    #track lives
     turns = check_answer(guess, answer, turns)
     if turns == 0:
       print("You lose")
